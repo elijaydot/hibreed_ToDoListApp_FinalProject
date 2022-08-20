@@ -92,8 +92,6 @@
                     <li class="todo__item">
                         <p><label for="title"><b>Title: </b></label>{{ todo.title }}</p>
                         <p><label for="due_date"><b>Due Date:</b></label>{{ todo.due_date }}</p>
-                        <!-- <p>{{ todo.created_by }}</p>
-                        <p>{{ todo.assigned_to }}</p> -->
                         <a class="btn btn-outline-secondary" href="{{ url_for('incomplete', id=todo.id) }}" class="">⬅️
                             undo</a>
                         <a class="todo__viewdone" href="{{ url_for('viewnote', id=todo.id) }}" class="">🏸</a>

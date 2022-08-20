@@ -1,6 +1,4 @@
-from cgitb import text
 from datetime import date, datetime
-from turtle import title
 from venv import create
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
