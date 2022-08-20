@@ -1,0 +1,134 @@
+
+.todo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	font-family: "Overpass", Helvetica, Arial, sans-serif;
+  }
+  
+  .todo__header {
+	width: 100%;
+	padding: 30px;
+	border-bottom: 3px solid black;
+	background-color: #ff8b0f;
+	margin-bottom: 20px;
+	color: white
+  }
+  
+  .todo__headerContainer {
+	border: none;
+  }
+  
+  .todo__form {
+	display: flex;
+	padding: 20px;
+	padding-top: 0;
+	/* background-color: #ff8b0f; */
+  }
+  
+  .todo__form > input {
+	margin-right: 10px;
+  }
+  
+  .todo__itemHeader {
+	color: #444444;
+  }
+  
+  .todo__close {
+	position: absolute;
+	top: 5px;
+	right: 3px;
+	padding-right: 7px;
+	color: red
+  }
+  .todo__edit{
+	position: absolute;
+	top: 5px;
+	right: 33px;
+	padding-right: 10px;
+	color: rgb(30, 255, 0)
+  }
+  .todo__viewdone{
+	position: absolute;
+	top: 5px;
+	right: 33px;
+	padding-right: 10px;
+	color: rgb(30, 255, 0)
+  }
+  .todo__view{
+	position: absolute;
+	top: 5px;
+	right: 33px;
+	padding-right: 35px;
+	color: rgb(0, 17, 255)
+  }
+  
+  .todo__item {
+	position: relative;
+	background-color: #ffffff;
+	border-radius: 7px;
+	text-align: center;
+	padding: 25px;
+	margin: 10px;
+	width: 100%;
+	max-width: 278px;
+	box-shadow: 0px -4px 20px -14px rgba(0,0,0,0.41);
+  }
+  
+  .todo__itemHeader {
+	text-align: center;
+	color: white
+  }
+  
+  .todo__container {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	justify-content: center;
+	max-width: 800px;
+	padding-left: 0;
+  }
+
+  .todo__container_input {
+	display: block;
+	/* flex-wrap: wrap; */
+	/* list-style: none; */
+	line-height: 16px;
+	justify-content: center;
+	width: 100%;
+	/* max-width: 800px; */
+	/* padding-left: 10;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0; */
+	margin-bottom: 10!important;
+  }
+  
+  .todo__innerItemContainer {
+	flex: 1;
+	max-width: 412px;
+	margin: 10px;
+	padding: 20px;
+	height: fit-content;
+	width: 330px;
+	box-shadow: 0px -4px 19px -1px rgba(0,0,0,0.41);
+	/* background-color: #eeeeee; */
+	background-color: #ff8b0f;
+  }
+  
+  .todo__itemContainer {
+	margin: 20px;
+	display: flex;
+	justify-content: space-evenly;
+  }
+  
+  .todo__buttonContainer {
+	display: flex;
+  }
+  
+  @media(max-width: 800px) {
+	.todo__itemContainer {
+	  flex-wrap: wrap;
+	}
+  }

@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hibreed Todo App </title> 
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}"> 
+  
+</head>
+<body>
+
+    <div class="todo">
+        <h1 class="todo__header">To Do App 📜</h1>
+    
+        <div class="card todo__headerContainer">
+            <p class="font-weight-bold">View note {{todo.id}}
+            <form class="todo__form" action="" method="POST">
+                <div class="card todo__innerItemContainer">
+                    <span class="todo__container_input">
+                        <label for="title"><b>Todo Title</b>: {{todo.title}}</label><br><br>
+                        
+                        <label for="body"><b>To do Body</b>: {{todo.body}} </label> <br><br>
+                        <label><b> Created By: </b>{{todo.created_by}} </label><br><br>
+                        <label><b> Date Created: </b>{{todo.date_created}} </label><br><br>
+                        <label><b> Assigned To: </b>{{todo.assigned_to}} </label><br><br>
+                        <label><b> Due Date: </b>{{todo.due_date}} </label><br><br>
+                        <label><b> Activity Duration: </b>{{todo.activity_duration}} </label> <br><br>
+                        <label><b> Comment: </b>{{todo.comment}} </label><br><br>
+                        <!-- <input class="btn btn-info" type="submit" value="Yes"> -->
+                        <a href="/">⛪Home</a>
+                        <!-- This Jinja If statement handles the Edit button. No Edit must be done for completed task/notes -->
+                        {% if todo.complete == False %} 
+                            <a href="{{ url_for('update', id=todo.id) }}">✍Edit</a>
+                        
+                            {% endif %}
+                    </span>
+
+                    <!-- <span class="todo__container_input">
+                        <label for="title">To do Title:</label>
+                            <input type="text" name="title" placeholder="Title of task">
+                        </span> -->
+                </div>
+                
+            </form>
+        </div>
+    
+</body>
+</html>

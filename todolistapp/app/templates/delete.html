@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hibreed Todo App </title> 
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}"> 
+  
+</head>
+<body>
+
+    <div class="todo">
+        <h1 class="todo__header">To Do App 📜</h1>
+    
+        <div class="card todo__headerContainer">
+            <p class="font-weight-bold">Delete note {{todo.id}}</p>
+            <form class="todo__form" action="" method="POST">
+                <div class="card todo__innerItemContainer">
+                    <span class="todo__container_input">
+                        <label for="title">Todo Title: {{todo.title}}</label>
+                        <!-- <input type="text" name="title" placeholder="Title of task" value="{{todo.title}}"> -->
+                    </span>
+                    <p>Click Yes to confirm</p>
+                
+                    <input class="btn btn-info" type="submit" value="Yes">
+                    <a href="/">Cancel</a>
+                </div>
+                
+            </form>
+        </div>
+    
+</body>
+</html>

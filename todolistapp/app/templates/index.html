@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Hibreed Todo App</title> 
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}"> 
+  
+</head> 
+<body> 
+       <div class="todo">
+        <h1 class="todo__header">To Do App 📜</h1>
+    
+        <div class="card todo__headerContainer">
+            <p class="font-weight-bold">Let's plan for today 💪</p>
+            <form class="todo__form" action="{{ url_for('add') }}" method="POST">
+                <div class="card todo__innerItemContainer">
+                    <span class="todo__container_input">
+                    <p><label for="title">To do Title:</label>
+                        <input type="text" name="title" placeholder="Title of task"></p>
+                    </span>
+                    <span class="todo__container_input">
+                    <p><label for="body">To do Body:</label>
+                        <input type="text" name="body" placeholder="enter your todo task"></p>
+                    </span>
+                 
+                    <span class="todo__container_input">
+                    <p><label for="created_by">Created By:</label>
+                        <input type="text" name="created_by" placeholder="created by"></p>
+                    </span>
+
+                    <span class="todo__container_input">
+                    <p> <label for="date_created">Date Created:</label>
+                        <input type="date" name="date_created"></p>
+                    </span>
+
+                    <span class="todo__container_input">
+                    <p><label for="assigned_to">Assigned To:</label>
+                        <input type="text" name="assigned_to" placeholder="assigned to"></p>
+                    </span>
+
+                    <span class="todo__container_input">
+                    <p> <label for="due_date">Due Date:</label>
+                        <input type="date" name="due_date"></p>
+                    </span>
+
+                    <span class="todo__container_input">
+                    <p><label for="duration">Duration:</label>
+                        <input type="text" name="activity_duration" placeholder="duration of the task"></p>
+                    </span>
+
+                    <span class="todo__container_input">
+                    <p><label for="comment">Comment:</label>
+                        <input type="text" name="comment" placeholder="add comment"></p>
+                    </span>
+                
+                    <input class="btn btn-info" type="submit" value="➕ Add Item">
+                </div>
+                
+            </form>
+        </div>
+
+
+        {% if incomplete %}
+        <div class="todo__itemContainer">
+            <div class="card todo__innerItemContainer">
+                <h2 class="todo__itemHeader">To Do's 🕐</h2>
+                <ul class="todo__container">
+                    {% for todo in incomplete %}
+                    <li class="todo__item">
+                        <p><label for="title"><b>Title: </b></label>{{ todo.title }}</p>
+                        <p><label for="due_date"><b>Due Date:</b></label>{{ todo.due_date }}</p>
+                        <!-- <p>{{ todo.created_by }}</p>
+                        <p>{{ todo.assigned_to }}</p> -->
+                        
+                        <a class="btn btn-outline-success" href="{{ url_for('complete', id=todo.id) }}" class="">complete
+                            ➡️</a>
+                        <a class="todo__view" href="{{ url_for('viewnote', id=todo.id) }}" class="">🏸</a>
+                        <a class="todo__edit" href="{{ url_for('update', id=todo.id) }}" class="">✍</a>
+                        <a class="todo__close" href="{{ url_for('delete', id=todo.id) }}" class="">❌</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    
+        {% if complete %}
+            <div class="card todo__innerItemContainer">
+                <h2 class="todo__itemHeader">Done ✅</h2>
+    
+                <ul class="todo__container">
+                    {% for todo in complete %}
+                    <li class="todo__item">
+                        <p><label for="title"><b>Title: </b></label>{{ todo.title }}</p>
+                        <p><label for="due_date"><b>Due Date:</b></label>{{ todo.due_date }}</p>
+                        <!-- <p>{{ todo.created_by }}</p>
+                        <p>{{ todo.assigned_to }}</p> -->
+                        <a class="btn btn-outline-secondary" href="{{ url_for('incomplete', id=todo.id) }}" class="">⬅️
+                            undo</a>
+                        <a class="todo__viewdone" href="{{ url_for('viewnote', id=todo.id) }}" class="">🏸</a>
+                        <a class="todo__close" href="{{ url_for('delete', id=todo.id) }}" class="">❌</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+
+
+
+
+</body> 
+</html> 
