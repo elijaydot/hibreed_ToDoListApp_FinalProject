@@ -1,6 +1,6 @@
 # Hibreed_ToDoListApp_FinalProject
 
-This is a Flask Project for an Activity Management Application(To-do list), as a final project for the Python Programming class with Hibreed.io
+This is a Flask Project for an Activity Management Application(To-do list), as a final project for the Python Programming class with [Hibreed.io](https://www.hibreed.io/)
 
 ## Key Features
 The users of the Activity Management Application should be able to
