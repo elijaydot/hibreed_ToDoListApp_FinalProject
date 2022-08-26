@@ -42,3 +42,6 @@ todolistapp/scripts/activate.ps1
 PS: please do note that this implementation is for development purpose.
 To deploy to a live server, you have to disable debugging and any sensitive data.
 You can find more details here [Deploying to Production](https://flask.palletsprojects.com/en/2.2.x/deploying/).
+
+
+CC: Debola Odubitan, Sage Minini and Ntambara Steven
